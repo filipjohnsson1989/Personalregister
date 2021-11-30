@@ -3,6 +3,15 @@ using System.Collections.Generic;
 
 namespace Personalregister
 {
+    // 1. Programklassen ska vara så enkel som möjligt och alla uppgifter ska hanteras genom att skapa nya klasser.
+    // 1. Här har jag en Employee klass och en Program klass.
+
+    // 2. Program klassen har två methoder GetEmployees and PrintEmployeesList
+    // 2. Employee klassen har två privat propert för namn och lön
+    // 2. Employee klassen har två public propert för namn och lön som man bara kan läser deras värderingar
+
+    // 3. Programmet är nedan
+
     class Program
     {
         static void Main(string[] args)
