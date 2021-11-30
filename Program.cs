@@ -29,6 +29,7 @@ namespace Personalregister
                             break;
 
                         case 2:
+                            PrintEmployeesList(employees);
                             break;
 
                         case 3:
@@ -78,5 +79,13 @@ namespace Personalregister
             return result;
         }
 
+        static void PrintEmployeesList(List<Employee> employees)
+        {
+            foreach (var employee in employees)
+            {
+                Console.WriteLine($"Namn: {employee.Name} , Lön: {employee.Wage}");
+            }
+
+        }
     }
 }
