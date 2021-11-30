@@ -25,7 +25,7 @@ namespace Personalregister
                     switch (inputNumber)
                     {
                         case 1:
-
+                            employees.AddRange(GetEmployees());
                             break;
 
                         case 2:
@@ -40,6 +40,42 @@ namespace Personalregister
                     }
                 }
             }
+        }
+
+        static List<Employee> GetEmployees()
+        {
+            List<Employee> result = new List<Employee>();
+
+            var stringInput = String.Empty;
+            bool stopReading;
+
+            Console.WriteLine("Skriva in som \"Filip Johnsson,1700\" anars tomt att klara");
+            do
+            {
+                string namn;
+                int wage;
+
+                stringInput = Console.ReadLine();
+                string[] stringInputs = stringInput.Split(",");
+                stopReading = String.IsNullOrEmpty(stringInput);
+
+                if (!stopReading)
+                {
+                    if (stringInputs.Length != 2)
+                        Console.WriteLine("Ogiltig data, försök igen!");
+                    else
+                    {
+                        namn = stringInputs[0];
+                        wage = int.Parse(stringInputs[1]);
+
+                        Employee employee = new Employee(namn, wage);
+
+                        result.Add(employee);
+                    }
+                }
+            } while (!stopReading);
+
+            return result;
         }
 
     }
